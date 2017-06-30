@@ -1,0 +1,3 @@
+adapter: 'postgresql'
+database: 'dynamicare_development'
+pool: 5

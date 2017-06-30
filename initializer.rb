@@ -1,0 +1,1 @@
+set :database_file, "./config/db.yml"
