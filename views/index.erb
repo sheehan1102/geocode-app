@@ -1,40 +1,73 @@
-<h1>Let's Geocode!</h1>
+<div id="image-box" style="background-image: url('/images/fall-leaves.jpg')">
+  <div class="north-south-white-gradient" id="image-box-cover"></div>
+</div>
 
-<form id="location-form">
-  <div id="location-form-errors"></div>
+<div id="index-wrapper">  
+  <h1>Let's Geocode!</h1>
 
-  <label for="address_one">Address</label>
-  <input type="text" name="address_one" id="address_one" />
+  <div id="location-form-wrapper">
+    <form id="location-form">
+      <div id="location-form-errors"></div>
 
-  <label for="address_two">Address #2</label>
-  <input type="text" name="address_two" id="address_two" />
+      <h3>Enter address below:</h3>
 
-  <label for="city">City</label>
-  <input type="text" name="city" name="city" id="city" />
+      <div class="location-form-input">
+        <label for="address_one">Address</label>
+        <input type="text" name="address_one" id="address_one" />
+      </div>
 
-  <label for="state">State</label>
-  <input type="text" name="state" name="state" id="state" />
+      <div class="location-form-input">
+        <label for="address_two">Address #2</label>
+        <input type="text" name="address_two" id="address_two" />
+      </div>
 
-  <label for="zip">Postal code</label>
-  <input type="text" name="zip" name="zip" id="zip" >
+      <div class="location-form-input">
+        <label for="city">City</label>
+        <input type="text" name="city" name="city" id="city" />
+      </div>
 
-  <button type="submit">Geocode!</button>
-</form>
+      <div class="location-form-input">
+        <label for="state">State</label>
+        <input type="text" name="state" name="state" id="state" />
+      </div>
 
+      <div class="location-form-input">
+        <label for="zip">Postal code</label>
+        <input type="text" name="zip" name="zip" id="zip" />
+      </div>
 
-<table id="locations-table">
-  <% @locations.each do |l| %>
-    <tr>
-      <td><%= l.full_text_address %></td>
-      <td><%= "Coordinates: #{l.lat}, #{l.long}" %></td>
-    </tr>
-  <% end %>
-</table>
+      <div id="location-form-button-wrapper">
+        <button type="submit">Geocode!</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="locations-index-wrapper">
+    <div id="locations-index">
+      <h3>Locations:</h3>
+
+      <div id="locations-row-wrapper">
+        <% @locations.each do |l| %>
+          <div class="locations-row">
+            <p><%= "#{l.full_text_address}:" %></p>
+            <ul class="locations-list">
+              <li><%= "Latitude: <b>#{l.shortened(:lat)}</b>, Longitude: <b>#{l.shortened(:long)}</b>" %></li>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
 <script type="text/javascript">
   $(document).ready(function() {
+    setTimeout(function() {
+      $('#image-box').fadeIn(2000);
+    }, 500)
+
     $('#location-form').on('submit', function (e) {
       e.preventDefault();
 

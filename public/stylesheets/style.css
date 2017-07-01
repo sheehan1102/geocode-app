@@ -1,0 +1,161 @@
+/* universal */
+
+body {
+	font-family: 'Fira Sans Extra Condensed', sans-serif;
+	font-size: 1.25em;
+}
+
+h1, h3 {
+	font-family: 'Cinzel', serif;
+}
+
+#image-box {
+	position: absolute;
+	z-index: -25;
+	width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 700px;
+	display: none;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	-ms-background-size:cover;
+	background-size:cover;
+}
+
+#image-box-cover {
+	position: absolute;
+	z-index: -24;
+	width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 700px;
+}
+
+.north-south-white-gradient {
+	background: -moz-linear-gradient(top, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.6) 25%, rgba(255,255,255,0.8) 49%, rgba(255,255,255,0.9) 76%, rgba(255,255,255,1) 100%);
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0.6) 25%,rgba(255,255,255,0.8) 49%,rgba(255,255,255,0.9) 76%,rgba(255,255,255,1) 100%);
+	background: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0.6) 25%,rgba(255,255,255,0.8) 49%,rgba(255,255,255,0.9) 76%,rgba(255,255,255,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66ffffff', endColorstr='#ffffff',GradientType=0 );
+}
+
+#index-wrapper h1 {
+	text-align: center;
+}
+
+#location-form-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+#location-form {
+	margin: 10px;
+	background-color: #FAFAFA;
+	border: 2px solid #EDEDED;
+	border-radius: 5px;
+}
+
+#location-form h3 {
+	padding-left: 10px;
+	margin-top: 5px;
+}
+
+#location-form-errors {
+	display: none;
+}
+
+.location-form-input {
+	display: flex;
+	justify-content: center;
+	margin: 5px;
+}
+
+.location-form-input label {
+	width: 38%;
+	text-align: right;
+	padding-right: 20px;
+}
+
+.location-form-input input {
+	width: 62%;
+	border-radius: 3px;
+	border-width: 0;
+	background-color: #D3D3D3;
+	text-align: center;
+	color: #4169E1;
+	font-size: 1em;
+}
+
+.location-form-input > * {
+	margin: 5px;
+}
+
+.location-form-input input:focus {
+	outline: none;
+}
+
+#location-form-button-wrapper {
+	display: flex;
+	justify-content: flex-end;
+}
+
+button {
+	width: 31%;
+	margin: 0px 10px 5px 10px;
+	padding: 10px;
+	background-color: #4169E1;
+	border: 1px solid #FEFDFD;
+	border-radius: 5px;
+	color: #D3D3D3;
+	font-family: 'Cinzel', serif;
+	font-size: .8em;
+}
+
+button:focus {
+	outline: none;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+#locations-index-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+#locations-index p {
+	margin: 5px 0;
+}
+
+#locations-row-wrapper .locations-row:nth-child(odd) {
+	background-color: #EDEDED;
+}
+
+.locations-row {
+	padding: 5px;
+}
+
+.locations-list {
+	list-style: none;
+	padding-left: 40px;
+	margin: 5px 0;
+}
+
+@media (min-width: 769px) {
+	#location-form {
+		width: 80%;
+	}
+
+	button:hover {
+		background-color: #D3D3D3;
+		color: #4169E1;
+	}
+
+	#locations-index {
+		width: 80%;
+	}
+}
