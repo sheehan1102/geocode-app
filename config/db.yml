@@ -1,3 +1,14 @@
-adapter: 'postgresql'
-database: 'dynamicare_development'
-pool: 5
+production:
+  adapter: 'postgresql'
+  database: 'dynamicare_production'
+  pool: 5
+
+development:
+  adapter: 'postgresql'
+  database: 'dynamicare_development'
+  pool: 5
+
+test:
+  adapter: 'postgresql'
+  database: 'dynamicare_test'
+  pool: 5
