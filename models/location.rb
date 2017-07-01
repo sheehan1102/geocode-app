@@ -13,10 +13,10 @@
 #  long                :string
 #
 
-# require 'URI'
-
 class Location < ActiveRecord::Base
   validates_presence_of :address_one, :city, :state, :zip
+
+  scope :id_descending, ->{ order(id: :desc) }
 
   def full_text_address
     street_address = address_two_empty? ? "#{address_one}" : "#{address_one}, #{address_two}"
@@ -27,8 +27,11 @@ class Location < ActiveRecord::Base
     [address_one, city, state, zip].map{ |el| URI.escape(el) }.join(',')
   end
 
-  def full_text_coordinates
-    "Coordinates: #{lat}, #{long}"
+  def shortened(coord)
+    coord = send(coord.to_sym)
+    unless coord.nil?
+      coord.length > 10 ? coord.slice(0, 10) : coord
+    end
   end
 
   private
