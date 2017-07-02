@@ -15,7 +15,7 @@ class GoogleGeocoder
     coords = response['results'].try(:[], 0)
                                 .try(:[], 'geometry')
                                 .try(:[], 'location')
-    return {} if coords.nil?
+    return { lat: 'somewhere', long: 'out there' } if coords.nil?
     return { lat: coords['lat'].to_s, long: coords['lng'].to_s }
   end
 
